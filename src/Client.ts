@@ -37,6 +37,9 @@ export class DevinApiClient {
             headers: mergeHeaders(
                 {
                     "X-Fern-Language": "JavaScript",
+                    "X-Fern-SDK-Name": "imdb",
+                    "X-Fern-SDK-Version": "0.1.0",
+                    "User-Agent": "imdb/0.1.0",
                     "X-Fern-Runtime": core.RUNTIME.type,
                     "X-Fern-Runtime-Version": core.RUNTIME.version,
                 },
