@@ -23,7 +23,7 @@ groups:
         version: 1.10.3
         output:
           location: npm
-          package-name: imdb
+          package-name: @devalog/imdb-test
           token: ${NPM_TOKEN}
         github: 
           repository: devalog/fern-sdk-test
