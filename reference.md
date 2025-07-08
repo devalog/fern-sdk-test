@@ -2,7 +2,7 @@
 
 ## Imdb
 
-<details><summary><code>client.imdb.<a href="/src/api/resources/imdb/client/Client.ts">createMovie</a>({ ...params }) -> DevinApi.MovieId</code></summary>
+<details><summary><code>client.imdb.<a href="/src/api/resources/imdb/client/Client.ts">createMovie</a>({ ...params }) -> YourClientNameTesting.MovieId</code></summary>
 <dl>
 <dd>
 
@@ -49,7 +49,7 @@ await client.imdb.createMovie({
 <dl>
 <dd>
 
-**request:** `DevinApi.CreateMovieRequest`
+**request:** `YourClientNameTesting.CreateMovieRequest`
 
 </dd>
 </dl>
@@ -68,7 +68,7 @@ await client.imdb.createMovie({
 </dl>
 </details>
 
-<details><summary><code>client.imdb.<a href="/src/api/resources/imdb/client/Client.ts">getMovie</a>(id) -> DevinApi.Movie</code></summary>
+<details><summary><code>client.imdb.<a href="/src/api/resources/imdb/client/Client.ts">getMovie</a>(id) -> YourClientNameTesting.Movie</code></summary>
 <dl>
 <dd>
 
@@ -112,7 +112,7 @@ await client.imdb.getMovie("tt0111161");
 <dl>
 <dd>
 
-**id:** `DevinApi.MovieId`
+**id:** `YourClientNameTesting.MovieId`
 
 </dd>
 </dl>

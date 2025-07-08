@@ -6,7 +6,7 @@ import * as core from "./core/index.js";
 import { mergeHeaders } from "./core/headers.js";
 import { Imdb } from "./api/resources/imdb/client/Client.js";
 
-export declare namespace DevinApiClient {
+export declare namespace YourClientNameTestingClient {
     export interface Options {
         environment: core.Supplier<string>;
         /** Specify a custom URL to connect the client to. */
@@ -27,19 +27,19 @@ export declare namespace DevinApiClient {
     }
 }
 
-export class DevinApiClient {
-    protected readonly _options: DevinApiClient.Options;
+export class YourClientNameTestingClient {
+    protected readonly _options: YourClientNameTestingClient.Options;
     protected _imdb: Imdb | undefined;
 
-    constructor(_options: DevinApiClient.Options) {
+    constructor(_options: YourClientNameTestingClient.Options) {
         this._options = {
             ..._options,
             headers: mergeHeaders(
                 {
                     "X-Fern-Language": "JavaScript",
-                    "X-Fern-SDK-Name": "devalog-imdb-test",
-                    "X-Fern-SDK-Version": "0.1.1",
-                    "User-Agent": "devalog-imdb-test/0.1.1",
+                    "X-Fern-SDK-Name": "my-unique-package-name-devalog",
+                    "X-Fern-SDK-Version": "1.0.3",
+                    "User-Agent": "my-unique-package-name-devalog/1.0.3",
                     "X-Fern-Runtime": core.RUNTIME.type,
                     "X-Fern-Runtime-Version": core.RUNTIME.version,
                 },

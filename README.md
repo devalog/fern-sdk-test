@@ -1,14 +1,14 @@
 # Devin TypeScript Library
 
 [![fern shield](https://img.shields.io/badge/%F0%9F%8C%BF-Built%20with%20Fern-brightgreen)](https://buildwithfern.com?utm_source=github&utm_medium=github&utm_campaign=readme&utm_source=https%3A%2F%2Fgithub.com%2Fdevalog%2Ffern-sdk-test)
-[![npm shield](https://img.shields.io/npm/v/devalog-imdb-test)](https://www.npmjs.com/package/devalog-imdb-test)
+[![npm shield](https://img.shields.io/npm/v/my-unique-package-name-devalog)](https://www.npmjs.com/package/my-unique-package-name-devalog)
 
 The Devin TypeScript library provides convenient access to the Devin API from TypeScript.
 
 ## Installation
 
 ```sh
-npm i -s devalog-imdb-test
+npm i -s my-unique-package-name-devalog
 ```
 
 ## Reference
@@ -20,9 +20,9 @@ A full reference for this library is available [here](https://github.com/devalog
 Instantiate and use the client with the following:
 
 ```typescript
-import { DevinApiClient } from "devalog-imdb-test";
+import { YourClientNameTestingClient } from "my-unique-package-name-devalog";
 
-const client = new DevinApiClient({ environment: "YOUR_BASE_URL" });
+const client = new YourClientNameTestingClient({ environment: "YOUR_BASE_URL" });
 await client.imdb.createMovie({
     title: "title",
     rating: 1.1,
@@ -35,12 +35,12 @@ When the API returns a non-success status code (4xx or 5xx response), a subclass
 will be thrown.
 
 ```typescript
-import { DevinApiError } from "devalog-imdb-test";
+import { YourClientNameTestingError } from "my-unique-package-name-devalog";
 
 try {
     await client.imdb.createMovie(...);
 } catch (err) {
-    if (err instanceof DevinApiError) {
+    if (err instanceof YourClientNameTestingError) {
         console.log(err.statusCode);
         console.log(err.message);
         console.log(err.body);
@@ -135,9 +135,9 @@ The SDK provides a way for you to customize the underlying HTTP client / Fetch f
 unsupported environment, this provides a way for you to break glass and ensure the SDK works.
 
 ```typescript
-import { DevinApiClient } from "devalog-imdb-test";
+import { YourClientNameTestingClient } from "my-unique-package-name-devalog";
 
-const client = new DevinApiClient({
+const client = new YourClientNameTestingClient({
     ...
     fetcher: // provide your implementation here
 });

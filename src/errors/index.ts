@@ -1,2 +1,2 @@
-export { DevinApiError } from "./DevinApiError.js";
-export { DevinApiTimeoutError } from "./DevinApiTimeoutError.js";
+export { YourClientNameTestingError } from "./YourClientNameTestingError.js";
+export { YourClientNameTestingTimeoutError } from "./YourClientNameTestingTimeoutError.js";

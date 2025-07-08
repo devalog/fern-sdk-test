@@ -1,6 +1,6 @@
 {
-    "name": "devalog-imdb-test",
-    "version": "0.1.1",
+    "name": "my-unique-package-name-devalog",
+    "version": "1.0.3",
     "private": false,
     "repository": "https://github.com/devalog/fern-sdk-test",
     "type": "commonjs",

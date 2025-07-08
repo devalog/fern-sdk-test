@@ -3,11 +3,11 @@
  */
 
 import * as errors from "../../../../errors/index.js";
-import * as DevinApi from "../../../index.js";
+import * as YourClientNameTesting from "../../../index.js";
 import * as core from "../../../../core/index.js";
 
-export class MovieDoesNotExistError extends errors.DevinApiError {
-    constructor(body: DevinApi.MovieId, rawResponse?: core.RawResponse) {
+export class MovieDoesNotExistError extends errors.YourClientNameTestingError {
+    constructor(body: YourClientNameTesting.MovieId, rawResponse?: core.RawResponse) {
         super({
             message: "MovieDoesNotExistError",
             statusCode: 404,

@@ -3,7 +3,7 @@
  */
 
 import * as core from "../../../../core/index.js";
-import * as DevinApi from "../../../index.js";
+import * as YourClientNameTesting from "../../../index.js";
 import { mergeHeaders } from "../../../../core/headers.js";
 import * as errors from "../../../../errors/index.js";
 
@@ -38,7 +38,7 @@ export class Imdb {
     /**
      * Add a movie to the database
      *
-     * @param {DevinApi.CreateMovieRequest} request
+     * @param {YourClientNameTesting.CreateMovieRequest} request
      * @param {Imdb.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
@@ -48,16 +48,16 @@ export class Imdb {
      *     })
      */
     public createMovie(
-        request: DevinApi.CreateMovieRequest,
+        request: YourClientNameTesting.CreateMovieRequest,
         requestOptions?: Imdb.RequestOptions,
-    ): core.HttpResponsePromise<DevinApi.MovieId> {
+    ): core.HttpResponsePromise<YourClientNameTesting.MovieId> {
         return core.HttpResponsePromise.fromPromise(this.__createMovie(request, requestOptions));
     }
 
     private async __createMovie(
-        request: DevinApi.CreateMovieRequest,
+        request: YourClientNameTesting.CreateMovieRequest,
         requestOptions?: Imdb.RequestOptions,
-    ): Promise<core.WithRawResponse<DevinApi.MovieId>> {
+    ): Promise<core.WithRawResponse<YourClientNameTesting.MovieId>> {
         const _response = await core.fetcher({
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
@@ -74,11 +74,11 @@ export class Imdb {
             abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
-            return { data: _response.body as DevinApi.MovieId, rawResponse: _response.rawResponse };
+            return { data: _response.body as YourClientNameTesting.MovieId, rawResponse: _response.rawResponse };
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.DevinApiError({
+            throw new errors.YourClientNameTestingError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,
@@ -87,15 +87,17 @@ export class Imdb {
 
         switch (_response.error.reason) {
             case "non-json":
-                throw new errors.DevinApiError({
+                throw new errors.YourClientNameTestingError({
                     statusCode: _response.error.statusCode,
                     body: _response.error.rawBody,
                     rawResponse: _response.rawResponse,
                 });
             case "timeout":
-                throw new errors.DevinApiTimeoutError("Timeout exceeded when calling POST /movies/create-movie.");
+                throw new errors.YourClientNameTestingTimeoutError(
+                    "Timeout exceeded when calling POST /movies/create-movie.",
+                );
             case "unknown":
-                throw new errors.DevinApiError({
+                throw new errors.YourClientNameTestingError({
                     message: _response.error.errorMessage,
                     rawResponse: _response.rawResponse,
                 });
@@ -105,10 +107,10 @@ export class Imdb {
     /**
      * Retrieve a movie from the database based on the ID
      *
-     * @param {DevinApi.MovieId} id
+     * @param {YourClientNameTesting.MovieId} id
      * @param {Imdb.RequestOptions} requestOptions - Request-specific configuration.
      *
-     * @throws {@link DevinApi.MovieDoesNotExistError}
+     * @throws {@link YourClientNameTesting.MovieDoesNotExistError}
      *
      * @example
      *     await client.imdb.getMovie("tt0111161")
@@ -117,16 +119,16 @@ export class Imdb {
      *     await client.imdb.getMovie("tt1234")
      */
     public getMovie(
-        id: DevinApi.MovieId,
+        id: YourClientNameTesting.MovieId,
         requestOptions?: Imdb.RequestOptions,
-    ): core.HttpResponsePromise<DevinApi.Movie> {
+    ): core.HttpResponsePromise<YourClientNameTesting.Movie> {
         return core.HttpResponsePromise.fromPromise(this.__getMovie(id, requestOptions));
     }
 
     private async __getMovie(
-        id: DevinApi.MovieId,
+        id: YourClientNameTesting.MovieId,
         requestOptions?: Imdb.RequestOptions,
-    ): Promise<core.WithRawResponse<DevinApi.Movie>> {
+    ): Promise<core.WithRawResponse<YourClientNameTesting.Movie>> {
         const _response = await core.fetcher({
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
@@ -140,18 +142,18 @@ export class Imdb {
             abortSignal: requestOptions?.abortSignal,
         });
         if (_response.ok) {
-            return { data: _response.body as DevinApi.Movie, rawResponse: _response.rawResponse };
+            return { data: _response.body as YourClientNameTesting.Movie, rawResponse: _response.rawResponse };
         }
 
         if (_response.error.reason === "status-code") {
             switch (_response.error.statusCode) {
                 case 404:
-                    throw new DevinApi.MovieDoesNotExistError(
-                        _response.error.body as DevinApi.MovieId,
+                    throw new YourClientNameTesting.MovieDoesNotExistError(
+                        _response.error.body as YourClientNameTesting.MovieId,
                         _response.rawResponse,
                     );
                 default:
-                    throw new errors.DevinApiError({
+                    throw new errors.YourClientNameTestingError({
                         statusCode: _response.error.statusCode,
                         body: _response.error.body,
                         rawResponse: _response.rawResponse,
@@ -161,15 +163,15 @@ export class Imdb {
 
         switch (_response.error.reason) {
             case "non-json":
-                throw new errors.DevinApiError({
+                throw new errors.YourClientNameTestingError({
                     statusCode: _response.error.statusCode,
                     body: _response.error.rawBody,
                     rawResponse: _response.rawResponse,
                 });
             case "timeout":
-                throw new errors.DevinApiTimeoutError("Timeout exceeded when calling GET /movies/{id}.");
+                throw new errors.YourClientNameTestingTimeoutError("Timeout exceeded when calling GET /movies/{id}.");
             case "unknown":
-                throw new errors.DevinApiError({
+                throw new errors.YourClientNameTestingError({
                     message: _response.error.errorMessage,
                     rawResponse: _response.rawResponse,
                 });

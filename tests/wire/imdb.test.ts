@@ -3,12 +3,12 @@
  */
 
 import { mockServerPool } from "../mock-server/MockServerPool.js";
-import { DevinApiClient } from "../../src/Client";
+import { YourClientNameTestingClient } from "../../src/Client";
 
 describe("Imdb", () => {
     test("createMovie", async () => {
         const server = mockServerPool.createServer();
-        const client = new DevinApiClient({ environment: server.baseUrl });
+        const client = new YourClientNameTestingClient({ environment: server.baseUrl });
         const rawRequestBody = { title: "title", rating: 1.1 };
         const rawResponseBody = "string";
         server
@@ -29,7 +29,7 @@ describe("Imdb", () => {
 
     test("getMovie", async () => {
         const server = mockServerPool.createServer();
-        const client = new DevinApiClient({ environment: server.baseUrl });
+        const client = new YourClientNameTestingClient({ environment: server.baseUrl });
 
         const rawResponseBody = { id: "tt0111161", title: "The Shawshank Redemption", rating: 9.3 };
         server.mockEndpoint().get("/movies/tt0111161").respondWith().statusCode(200).jsonBody(rawResponseBody).build();

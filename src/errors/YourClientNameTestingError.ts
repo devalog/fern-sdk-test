@@ -5,7 +5,7 @@
 import * as core from "../core/index.js";
 import { toJson } from "../core/json.js";
 
-export class DevinApiError extends Error {
+export class YourClientNameTestingError extends Error {
     public readonly statusCode?: number;
     public readonly body?: unknown;
     public readonly rawResponse?: core.RawResponse;
@@ -22,7 +22,7 @@ export class DevinApiError extends Error {
         rawResponse?: core.RawResponse;
     }) {
         super(buildMessage({ message, statusCode, body }));
-        Object.setPrototypeOf(this, DevinApiError.prototype);
+        Object.setPrototypeOf(this, YourClientNameTestingError.prototype);
         this.statusCode = statusCode;
         this.body = body;
         this.rawResponse = rawResponse;

@@ -1,3 +1,3 @@
-export * as DevinApi from "./api/index.js";
-export { DevinApiError, DevinApiTimeoutError } from "./errors/index.js";
-export { DevinApiClient } from "./Client.js";
+export * as YourClientNameTesting from "./api/index.js";
+export { YourClientNameTestingError, YourClientNameTestingTimeoutError } from "./errors/index.js";
+export { YourClientNameTestingClient } from "./Client.js";
